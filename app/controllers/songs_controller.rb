@@ -44,10 +44,6 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:id' do
-    # if !params[:song].keys.include?("genre_ids")
-    #   params[:song][:genre_ids] = []
-    # end
-
     @song = Song.find(params[:id])
     @song.update(params[:song])
     @song.artist.update(params[:artist])
