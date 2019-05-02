@@ -47,13 +47,13 @@ class SongsController < ApplicationController
     # if !params[:song].keys.include?("genre_ids")
     #   params[:song][:genre_ids] = []
     # end
+    binding.pry
 
     @song = Song.find(params[:id])
     @song.update(params[:song])
     @song.artist.update(params[:artist])
     @song.genres.eachupdate(params[:genre][])
 
-    binding.pry
 
     if !params[:genre][:name].empty?
       @song.genres << Genre.create(name: params[:genre][:name])
