@@ -51,8 +51,9 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     @song.update(params[:song])
     @song.artist.update(params[:artist])
-    @song.genres.eachupdate(params[:genre][])
-
+    @song.genres.each do |genre|
+      genre.update(params[:genre][])
+    end
 
     if !params[:genre][:name].empty?
       @song.genres << Genre.create(name: params[:genre][:name])
