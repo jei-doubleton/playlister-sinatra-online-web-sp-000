@@ -1,5 +1,5 @@
 <h1>Create a New Song</h1>
-<form action="/songs" method="post">
+<form action="/songs/<%= @song.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
 
   <p><label for="Name">Name: </label>
