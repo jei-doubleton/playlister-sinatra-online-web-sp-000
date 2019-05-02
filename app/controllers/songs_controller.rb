@@ -9,9 +9,9 @@ class SongsController < ApplicationController
     erb :"songs/new"
   end
 
-  post '/songs/:slug' do
+  post '/songs' do
     @song = Song.create(params[:song])
-    binding.pry   
+    binding.pry
   end
 
   get '/songs/:slug' do
