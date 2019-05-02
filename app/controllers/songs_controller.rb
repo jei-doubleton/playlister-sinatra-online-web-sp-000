@@ -26,7 +26,7 @@ class SongsController < ApplicationController
     end
 binding.pry
     @genre = Genre.create(params[:genre])
-    @song.genre = @genre
+    @song.genres << @genre
     @song.save
 
     redirect "/songs/#{@song.slug}"
