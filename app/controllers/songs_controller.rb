@@ -45,6 +45,8 @@ class SongsController < ApplicationController
     @artist = Artist.update(params[:artist])
     @genre = Genre.update(params[:genre])
 
+    flash[:message] = "Successfully updated song."
+
     redirect "/songs/#{@song.slug}"
   end
 
