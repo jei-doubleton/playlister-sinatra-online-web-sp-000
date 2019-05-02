@@ -28,7 +28,7 @@ class SongsController < ApplicationController
     @genre = Genre.create(params[:genre])
     @song.genres << @genre
     @song.save
-
+    "Successfully created song."
     redirect "/songs/#{@song.slug}"
   end
 
