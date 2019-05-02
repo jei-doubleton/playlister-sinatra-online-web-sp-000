@@ -20,7 +20,7 @@ class SongsController < ApplicationController
 
     binding.pry    
 
-    if !@song.artist.empty?
+    if !@song.artist
       @artist = Artist.create(params[:artist])
       @song.artist = @artist
       @song.save
