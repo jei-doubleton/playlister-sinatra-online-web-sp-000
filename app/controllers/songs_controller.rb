@@ -44,7 +44,8 @@ class SongsController < ApplicationController
   end
 
   patch '/songs' do
-    Song.find_by_slug(params[:song].slug)
+
+
     @song = Song.update(params[:song])
     @artist = Artist.update(params[:artist])
     @genre = Genre.update(params[:genre])
