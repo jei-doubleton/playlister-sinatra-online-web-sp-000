@@ -52,7 +52,7 @@ class SongsController < ApplicationController
     @song.update(params[:song])
     @song.artist.update(params[:artist])
     @song.genres.each do |genre|
-      genre.update(params[:genre][])
+      genre.update(params[:genre])
     end
 
     if !params[:genre][:name].empty?
