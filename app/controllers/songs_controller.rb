@@ -12,7 +12,7 @@ class SongsController < ApplicationController
   post '/songs' do
     @song = Song.create(params[:song])
 binding.pry
-    if params[:artist]
+    if Artist.find params[:artist][:name]
       @artist = Artist.create(params[:artist])
     end
     @genre = Genre.create(params[:genre][])
