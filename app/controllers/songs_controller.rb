@@ -47,8 +47,9 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     @song.update(params[:song])
     @song.artist.update(params[:artist])
+    @song.save
 
-    if !params[:genre]
+    if params[:genre] != nil
       @song.genres << Genre.create(params[:genre])
       @song.save
     end
