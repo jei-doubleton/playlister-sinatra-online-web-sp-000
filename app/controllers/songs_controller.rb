@@ -14,7 +14,8 @@ class SongsController < ApplicationController
 
     Artist.all.each |artist| do
       if !params[:artist][:name] == artist.name
-      artist.name == params[:artist][:name]
+        @song.artist = artist
+      end
     end
       @artist = Artist.create(params[:artist])
     end
