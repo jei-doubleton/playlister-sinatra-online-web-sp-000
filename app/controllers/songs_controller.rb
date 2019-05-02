@@ -44,7 +44,6 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:id' do
-    binding.pry
     @song = Song.find(params[:id])
     @song.update(params[:song])
     @song.artist.update(params[:artist])
