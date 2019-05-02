@@ -2,7 +2,7 @@
 <form action="/songs/<%= @song %>" method="post">
   <p><label for="Name">Name: </label>
   <input type="text" name="song[name]" id="Name"></p>
-  <p><label for="artist">Artist: </label>
+  <p><label for="artist">Artist Name: </label>
   <input type="text" name="song[artist]" id="artist"></p>
   <p><label for="genre">Genre: </label>
   <% Genre.all.each do |genre| %>
