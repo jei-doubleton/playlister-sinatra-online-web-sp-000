@@ -44,13 +44,14 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:id' do
+    binding.pry
+
     @song = Song.find(params[:id])
     @song.update(params[:song])
     @song.artist.update(params[:artist])
     @song.genre.update(params[:genre])
 
     flash[:message] = "Successfully updated song."
-binding.pry
     redirect "/songs/#{@song.slug}"
   end
 
