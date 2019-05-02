@@ -18,7 +18,9 @@ class SongsController < ApplicationController
       end
     end
 
-    if @song.artist.empty?
+    binding.pry    
+
+    if !@song.artist.empty?
       @artist = Artist.create(params[:artist])
       @song.artist = @artist
       @song.save
