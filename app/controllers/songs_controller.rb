@@ -18,7 +18,7 @@ class SongsController < ApplicationController
       end
     end
 
-    binding.pry    
+    binding.pry
 
     if !@song.artist
       @artist = Artist.create(params[:artist])
