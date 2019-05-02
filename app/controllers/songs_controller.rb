@@ -12,11 +12,11 @@ class SongsController < ApplicationController
   post '/songs' do
     @song = Song.create(params[:song])
 
-    Artist.all.each |artist| do
+    Artist.all.each do |artist|
       if params[:artist][:name] == artist.name
         @song.artist = artist
       end
-    
+    end
 
     if @song.artist.empty?
       @artist = Artist.create(params[:artist])
