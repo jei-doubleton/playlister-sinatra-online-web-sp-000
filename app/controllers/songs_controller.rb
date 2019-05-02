@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  use Rack::FLash
 
   get '/songs' do
     @songs = Song.all
