@@ -6,7 +6,7 @@
   <input type="text" name="artist[name]" id="artist"></p>
   <p><label for="genre">Genre: </label>
   <% Genre.all.each do |genre| %>
-    <input type="checkbox" name="genre[name][]" value="<%= genre.name %>" id="<%= genre.name %>"><%= genre.name %></input>
+    <input type="checkbox" name="genre[name]" value="<%= genre.name %>" id="<%= genre.name %>"><%= genre.name %></input>
   <% end %></p>
   <input type="submit" name="Create" id="Create">
 </form>
