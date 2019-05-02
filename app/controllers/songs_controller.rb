@@ -24,7 +24,7 @@ class SongsController < ApplicationController
       @song.artist = @artist
       @song.save
     end
-
+binding.pry
     @genre = Genre.create(params[:genre])
     @song.genre = @genre
     @song.save
