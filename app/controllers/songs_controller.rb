@@ -45,7 +45,7 @@ class SongsController < ApplicationController
 
   patch '/songs/:id' do
     if !params[:song].keys.include?("genre_ids")
-      params[:owner]["pet_ids"] = []
+      params[:song][:genre_ids] = []
     end
 
     @song = Song.find(params[:id])
