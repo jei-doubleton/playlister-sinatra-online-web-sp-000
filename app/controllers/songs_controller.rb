@@ -53,10 +53,10 @@ class SongsController < ApplicationController
     @song.artist.update(params[:artist])
     @song.save
 
-    if !params[:genre][:name].empty?
-      @song.genres << Genre.create(params[:genre])
-      @song.save
-    end
+    # if !params[:genre][:name].empty?
+    #   @song.genres << Genre.create(params[:genre])
+    #   @song.save
+    # end
 
     flash[:message] = "Successfully updated song."
 
