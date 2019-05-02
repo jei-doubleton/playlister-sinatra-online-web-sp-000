@@ -50,6 +50,7 @@ class SongsController < ApplicationController
 
     @song = Song.find(params[:id])
     @song.update(params[:song])
+    binding.pry
     @song.artist.update(params[:artist])
 
     if !params[:genre][:name].empty?
