@@ -13,11 +13,16 @@ class SongsController < ApplicationController
     @song = Song.create(params[:song])
 
     Artist.all.each |artist| do
-      if !params[:artist][:name] == artist.name
+      if params[:artist][:name] == artist.name
         @song.artist = artist
       end
     end
+
+    if @song.artist.empty?
       @artist = Artist.create(params[:artist])
+      @song.artist = @artist
+    end
+    
     end
     @genre = Genre.create(params[:genre][])
     redirect "/songs/#{@song.slug}"
