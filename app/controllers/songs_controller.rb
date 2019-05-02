@@ -47,8 +47,8 @@ class SongsController < ApplicationController
     binding.pry
     @song = Song.find(params[:id])
     @song.update(params[:song])
-    @artist = Artist.update(params[:artist])
-    @genre = Genre.update(params[:genre])
+    @song.artist.update(params[:artist])
+    @song.genre.update(params[:genre])
 
     flash[:message] = "Successfully updated song."
 
