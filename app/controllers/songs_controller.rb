@@ -10,8 +10,9 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-    # @song = Song.create(params[:song])
-    "why, hello..."
+    @song = Song.create(params[:song])
+    @artist = Artist.create(params[:artist])
+    @genre = Genre.create(params[:genre])
     binding.pry
     # redirect erb :"songs/<%= @song.slug %>"
   end
