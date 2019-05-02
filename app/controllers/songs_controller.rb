@@ -53,6 +53,10 @@ class SongsController < ApplicationController
     @song.artist.update(params[:artist])
     @song.genres.eachupdate(params[:genre][])
 
+    if !params[:genre][:name].empty?
+      @song.genres << Genre.create(name: params[:genre][:name])
+    end
+
     flash[:message] = "Successfully updated song."
     redirect "/songs/#{@song.slug}"
   end
