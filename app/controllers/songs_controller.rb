@@ -15,6 +15,7 @@ class SongsController < ApplicationController
     Artist.all.each do |artist|
       if params[:artist][:name] == artist.name
         @song.artist = artist
+        @song.save
       end
     end
 
