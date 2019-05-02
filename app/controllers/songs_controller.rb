@@ -15,7 +15,7 @@ binding.pry
     if params[:artist]
       @artist = Artist.create(params[:artist])
     end
-    @genre = Genre.create(params[:genre])
+    @genre = Genre.create(params[:genre][])
     redirect "/songs/#{@song.slug}"
   end
 
