@@ -43,7 +43,7 @@ class SongsController < ApplicationController
     erb :"songs/edit"
   end
 
-  patch '/songs' do
+  patch '/songs/:id' do
 
 
     @song = Song.update(params[:song])
