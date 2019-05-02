@@ -11,8 +11,8 @@ class SongsController < ApplicationController
 
   post '/songs' do
     @song = Song.create(params[:song])
-
-    if 
+binding.pry
+    if params[:artist]
     @artist = Artist.create(params[:artist])
     @genre = Genre.create(params[:genre])
     redirect "/songs/#{@song.slug}"
