@@ -21,6 +21,7 @@ class SongsController < ApplicationController
     if @song.artist.empty?
       @artist = Artist.create(params[:artist])
       @song.artist = @artist
+      @song.save
     end
 
     end
