@@ -44,19 +44,17 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:id' do
-    # if !params[:song].keys.include?("genre_ids")
-    #   params[:song][:genre_ids] = []
-    # end
+    if !params[:song].keys.include?("genre_ids")
+      params[:song][:genre_ids] = []
+    end
 
     @song = Song.find(params[:id])
     @song.update(params[:song])
     @song.artist.update(params[:artist])
-    # @song.genres.each do |genre|
-    #   genre.update(params[:genre])
-    # end
 
     if !params[:genre][:name].empty?
       @song.genres << Genre.create(name: params[:genre][:name])
+      @song.save
     end
 
     flash[:message] = "Successfully updated song."
