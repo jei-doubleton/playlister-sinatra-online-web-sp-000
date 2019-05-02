@@ -44,7 +44,7 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:id' do
-    if !params[:song].keys.include?("pet_ids")
+    if !params[:song].keys.include?("genre_ids")
       params[:owner]["pet_ids"] = []
     end
 
