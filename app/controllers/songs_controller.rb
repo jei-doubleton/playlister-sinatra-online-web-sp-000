@@ -52,7 +52,7 @@ class SongsController < ApplicationController
     @song.update(params[:song])
     @song.artist.update(params[:artist])
 binding.pry
-    if !params[:genre][:name].empty?
+    if !params[:genre]
       @song.genres << Genre.create(params[:genre])
       @song.save
     end
