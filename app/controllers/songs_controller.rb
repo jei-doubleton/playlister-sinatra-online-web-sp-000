@@ -44,12 +44,10 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:id' do
-    binding.pry
-
     @song = Song.find(params[:id])
     @song.update(params[:song])
     @song.artist.update(params[:artist])
-
+binding.pry
     if !params[:genre]
       @song.genres << Genre.create(params[:genre])
       @song.save
