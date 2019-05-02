@@ -40,6 +40,7 @@ class SongsController < ApplicationController
 
   patch '/songs' do
     "hello"
+    redirect "/songs/#{@song.slug}"
   end
 
   get '/songs/:slug' do
