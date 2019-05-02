@@ -11,7 +11,9 @@ class SongsController < ApplicationController
 
   post '/songs' do
     @song = Song.create(params[:song])
-    if Artist.all.find |artist| do
+
+    Artist.all.each |artist| do
+      if !params[:artist][:name] == artist.name
       artist.name == params[:artist][:name]
     end
       @artist = Artist.create(params[:artist])
