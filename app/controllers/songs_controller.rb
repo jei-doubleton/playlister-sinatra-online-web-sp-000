@@ -13,7 +13,7 @@ class SongsController < ApplicationController
     @song = Song.create(params[:song])
     @artist = Artist.create(params[:artist])
     @genre = Genre.create(params[:genre])
-    # redirect erb :"songs/<%= @song.slug %>"
+    redirect erb :"songs/<%= @song.slug %>"
   end
 
   get '/songs/:slug' do
