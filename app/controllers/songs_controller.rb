@@ -39,7 +39,10 @@ class SongsController < ApplicationController
   end
 
   patch '/songs' do
-    "hello"
+    @song = Song.update(params[:song])
+    @artist = Artist.update(params[:artist])
+    @genre = Genre.update(params[:genre])
+
     redirect "/songs/#{@song.slug}"
   end
 
